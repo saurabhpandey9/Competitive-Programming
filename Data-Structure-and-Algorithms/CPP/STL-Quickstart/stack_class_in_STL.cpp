@@ -8,6 +8,8 @@ int main(){
     int n;
     cin>>n;
 
+    // In this code we will see four properties of stack ie. push() pop() top() empty()
+
     for(int i=0;i<=n;i++){
             int no;
             cin>>no;
