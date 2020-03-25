@@ -1,4 +1,4 @@
-//auther @Saurabh Pandey
+//author @Saurabh Pandey
 // basics of queue STL class
 #include<iostream>
 #include<queue>
