@@ -20,7 +20,7 @@ int main (){
 
     //or // another way to insert data in map 
     pair<string,int> p;
-    p.first="Saurbh";
+    p.first="Saurabh";
     p.second=1;
     m.insert(p);
 
@@ -36,6 +36,44 @@ int main (){
     }
 
     cout<<endl;
+
+    //2. search   --------------------m.found(key)----------- will give address
+    auto it=m.find("Saurabh");
+    if(it!=m.end()){
+        cout<<"Found "<<m["Saurabh"]<<endl;
+        cout<<"Found "<<it->first<<endl;  // I hope you understand the point
+    }
+
+
+    //2. m.count() it will return 0 or 1 like boolean
+
+    if(m.count("Saurabh")) {
+        cout<<"Found "<<m["Saurabh"]<<endl;
+    }
+
+
+    // ---------------------------------------m.erase(key)-----------------------------------//
+
+    m.erase("Saurabh");
+
+    // ------how to manually add somthing in map------------------------//
+
+    cout<<"After adding Pandey"<<endl;
+
+    m["Pandey"]=45;
+
+    for (auto it:m){
+        cout<<it.first<<"->"<<it.second<<endl;
+    }
+
+    // -----------Update previous value------------------//
+    m["Pandey"]=100;
+
+    cout<<"After update"<<endl;
+
+    for (auto it:m){
+        cout<<it.first<<"->"<<it.second<<endl;
+    }
 
 
 
