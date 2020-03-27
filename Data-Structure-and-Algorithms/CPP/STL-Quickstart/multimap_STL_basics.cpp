@@ -1,3 +1,6 @@
+//Author @ Saurabh Pandey
+//multipmap is same as map with only differenc that it can have
+// multiple value for same key
 #include<iostream>
 #include<string>
 #include<map>  // header file for both map and multimap is same
