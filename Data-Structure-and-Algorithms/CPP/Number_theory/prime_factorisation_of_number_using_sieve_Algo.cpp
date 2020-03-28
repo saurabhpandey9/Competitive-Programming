@@ -1,8 +1,7 @@
-// Author @ Saurabh Pandey
-// Sieve of Eratosthenes Algorithm implementation O(N loglogN)
 #include<iostream>
-#include<math.h>
+#include<list>
 using namespace std;
+
 bool check_prime(int n){
     if(n==1){
         return false;
@@ -20,6 +19,8 @@ bool check_prime(int n){
     }
 }
 
+
+
 bool prime_number(bool *p,int number){
 
     p[0]=false;
@@ -35,32 +36,51 @@ bool prime_number(bool *p,int number){
         }
     }
 
-
 }
 
+
 int main(){
-    cout<<"--------------------------Seive of Eratosthenes------------------------"<<endl;
-    int number;
-    cout<<"Enter the Number=";
-    cin>>number;
 
-    bool prime[number+1]; // array form 0 to number
-
+    int number=100000;
+    bool p[number+1];
     // initialization of all number from 0 to numbere as prime i.e true (initial assumption)
     for(int i=0;i<=number;i++){
-        prime[i]=true;
+        p[i]=true;
     }
+    prime_number(p,number);
 
-    prime_number(prime,number); // calling function for generation of prime no from 0 to number
+    list<int> plist;
 
-
-    cout<<"----------------Prime number between 0 to N-----------------"<<endl;
     for(int i=0;i<=number;i++){
-        if(prime[i]){
-            cout<<i<<" ";
+        if(p[i]){
+          plist.push_back(i);  
         }
         
     }
 
+    int n;
+    cout<<"Enter the number"<<endl;
+    cin>>n;
+
+    list<int> factors;
+
+    auto it=plist.begin();
+    while(n!=1){
+        if(n%(*it)==0){
+            n=n/(*it);
+            factors.push_back((*it));
+        }
+        else{
+            it++;
+        }
+    }
     cout<<endl;
+
+    for(auto x:factors){
+        cout<<x<<" ";
+    }
+
+
+
+    return 0;
 }
