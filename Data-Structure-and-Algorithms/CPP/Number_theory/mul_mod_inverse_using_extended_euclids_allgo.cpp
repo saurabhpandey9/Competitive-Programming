@@ -26,12 +26,12 @@ void extended_euclid_algo(int a ,int m){ // extended euclid algo
 }
 
 
-// driver code for to run both function
+// driver code to run both function
 void mod_inv(int a,int m){
     int falg=a>m? gcd(a,m):gcd(m,a);
     if(falg==1){
         extended_euclid_algo(a,m);
-        // this setp is done to get positive inverse 
+        // this step is done to get positive inverse 
         x=(x+m)%m;  
         cout<<"Inverse="<<x<<endl;
     }

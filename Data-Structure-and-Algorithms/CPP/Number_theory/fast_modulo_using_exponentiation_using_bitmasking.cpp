@@ -4,7 +4,7 @@
 #include<iostream>
 using namespace std;
 
-#define ll long long  // her we do not need to place ; do remeber
+#define ll long long  // here we do not need to place ; do remember
 
 ll fast_modulo_exponentiation(int a,int b,int m){
     int result=1;
