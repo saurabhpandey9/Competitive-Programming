@@ -76,7 +76,5 @@ int main(){
     }
     cout<<"The value X ="<< CTR(num,remainder,n);
 
-
-
     return 0;
 }
