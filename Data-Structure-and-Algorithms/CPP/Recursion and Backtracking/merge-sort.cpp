@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void sort(int *arr,int s,int e){
+void merge(int *arr,int s,int e){
 
     int mid=(s+e)/2;
     int i=s;
@@ -14,7 +14,7 @@ void sort(int *arr,int s,int e){
     int k=0;
     int temp[s+e];
 
-    while(i<=mid && j<=e){
+    while(i<=mid && j<=e){  // we are putting the element in temp array in ascending order
         if(arr[i]<arr[j]){
             temp[k++]=arr[i++];
         }
@@ -51,7 +51,7 @@ void mergesort(int *arr,int s,int e){
     mergesort(arr,mid+1,e);
 
     // We will merge two array along with sortng 
-    sort(arr,s,e);
+    merge(arr,s,e);
     return;
 }
 
